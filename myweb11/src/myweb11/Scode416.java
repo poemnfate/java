@@ -31,11 +31,10 @@ public class Scode416 {
 		 Scode416 s=new Scode416();
 		 
 		s.printArr(arr);
-		 for(int i=0;i<arr.length/2;i=i+2) {
-			 for(int j=i;j<arr.length;j++) {
-				
+		 for(int i=0;i<arr.length-1;i++) {
+			 for(int j=i+1;j<arr.length;j++) {
 				 if(arr[i].substring(1).equals(arr[j].substring(1))) {
-					 System.out.println(arr[i].substring(1)+"/"+arr[j].substring(1));
+					 
 					 String temp=arr[i+1];
 					 arr[i+1]=arr[j];
 					 arr[j]=temp;
@@ -43,6 +42,18 @@ public class Scode416 {
 						 temp=arr[i];
 						 arr[i]=arr[i+1];
 						 arr[i+1]=temp;
+					 }
+				 }
+				 continue;
+			 }
+		 }
+		 for(int i=0;i<arr.length;i=i+2) {
+			 for(int j=i+2;j<arr.length;j=j+2) {
+				 if(arr[i].charAt(1)>arr[j].charAt(1)) {
+					 for(int z=0;z<2;z++) {
+						 String temp=arr[i+z];
+						 arr[i+z]=arr[j+z];
+						 arr[j+z]=temp;
 					 }
 				 }
 			 }
